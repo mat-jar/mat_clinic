@@ -3,6 +3,6 @@
     <td class="patient-details"><%= patient.gender %></td>
     <td class="patient-details"><%= patient.birth_date %></td>
     <td class="patient-btns">
-        <%= link_to "Show this patient", patient %>
+        <%= link_to "Show this patient", patient, data: { turbo: "false" } %>
     </td>
 </tr>
