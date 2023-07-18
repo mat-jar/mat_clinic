@@ -23,12 +23,12 @@
 
   <div>
     <%= form.label :gender, style: "display: block" %>
-    <%= form.text_field :gender %>
+    <%= collection_radio_buttons(:patient, :gender, Patient.genders, :first, :first)%>
   </div>
 
   <div>
     <%= form.label :birth_date, style: "display: block" %>
-    <%= form.date_field :birth_date %>
+    <%= form.date_field :birth_date, :max => Date.today %>
   </div>
 
   <div>
