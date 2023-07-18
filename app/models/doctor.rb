@@ -1,4 +1,6 @@
 class Doctor < ApplicationRecord
+    has_many :appointments
+    
     validates :first_name, :last_name,  presence: true
     validates :first_name, :last_name, format: { with: /\A\D*\z/, message: "cannot contain any digits" }
 

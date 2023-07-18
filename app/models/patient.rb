@@ -1,4 +1,6 @@
 class Patient < ApplicationRecord
+    has_many :appointments
+    
     enum gender: { female: 'female', male: 'male'}
     before_save :upcase_first_name, :upcase_last_name, :upcase_city
 
