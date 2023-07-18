@@ -3,6 +3,8 @@
 <h1>Patients</h1>
 <%= button_to "New patient", new_patient_path, method: :get %>
 
+<%= render partial: 'search' %>
+
 <div><%= paginate @patients %></div>
 <table>
   <thead>
