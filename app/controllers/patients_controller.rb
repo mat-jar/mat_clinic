@@ -3,7 +3,8 @@ class PatientsController < ApplicationController
 
   # GET /patients or /patients.json
   def index
-    @patients = Patient.page(params[:page])
+    @q = Patient.ransack(params[:q])
+    @patients = @q.result.page(params[:page])
   end
 
   # GET /patients/1 or /patients/1.json

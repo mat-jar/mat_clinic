@@ -8,13 +8,23 @@
   <thead>
     <tr>
       <th id="patient-name" scope="col">
-        <span>Patient name</span>
+        <span>
+          Patient name
+          <%= sort_link(@q, :last_name, default_order: :asc, class: "btn btn-light btn-sm") do %>
+            <span></span>
+          <% end %>
+        </span>
       </th>
       <th id="patient-gender" scope="col">
         <span>Gender</span>
       </th>
       <th id="patient-birth-date" scope="col">
-      <span>Birth date</span>
+      <span>
+        Birth date
+        <%= sort_link(@q, :birth_date, default_order: :asc, class: "btn btn-light btn-sm") do %>
+          <span></span>
+        <% end %>
+      </span>
       </th>
       <th id="patient-acctions" scope="col">
         <span>Actions</span>

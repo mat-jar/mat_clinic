@@ -8,6 +8,10 @@ class Patient < ApplicationRecord
     validates :pesel, format: { with: /\A\d{11}\z/, message: "must consist of eleven digits" }
     validates :first_name, :last_name, :city, format: { with: /\A\D*\z/, message: "cannot contain any digits" }
 
+    def self.ransackable_attributes(auth_object = nil)
+        ["birth_date", "gender", "last_name"]
+    end
+
     def full_name
         "#{first_name.capitalize} #{last_name.capitalize}"
     end
