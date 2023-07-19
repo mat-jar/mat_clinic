@@ -3,7 +3,11 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments or /appointments.json
   def index
-    @appointments = Appointment.page(params[:page])
+    if patient_id = params[:patient_id]
+      @appointments = Patient.find(patient_id).appointments.page(params[:page])
+    else
+      @appointments = Appointment.page(params[:page])
+    end
   end
 
   # GET /appointments/1 or /appointments/1.json
@@ -13,6 +17,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   def new
     @appointment = Appointment.new
+    @patient_id = params[:patient_id]
   end
 
   # GET /appointments/1/edit
@@ -22,6 +27,7 @@ class AppointmentsController < ApplicationController
   # POST /appointments or /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
+    @patient_id = appointment_params[:patient_id]
 
     respond_to do |format|
       if @appointment.save
