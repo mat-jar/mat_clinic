@@ -1,2 +1,7 @@
-<h1>Statistics#show</h1>
-<p>Find me in app/views/statistics/show.html.erb</p>
+<h1>Patient Statistics</h1>
+<p>Number of patients according to birth year</p>
+<div id="metrics" data-metrics="<%= @birth_years_rates.to_json %>"></div>
+
+<div class="chart-container" data-controller="birth-dates-chart">
+  <canvas id="birth-years-rates-chart" width="400" height="400"></canvas>
+</div>
