@@ -44,7 +44,8 @@ export default class BirthDatesChartController extends Controller {
       label: 'Number of patients for a given year',
       data: this.metrics.map((m) => m.count),
       backgroundColor: 'rgba(54, 162, 235, 0.5)',
-      borderColor: 'rgb(54, 162, 235)'
+      borderWidth: 2,
+      borderColor: 'black'
     }];
 
   }
