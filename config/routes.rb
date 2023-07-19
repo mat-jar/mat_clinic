@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'statistics/show'
-  resources :appointments
+  resources :appointments, except: :show
   resources :doctors
   resources :patients
 
